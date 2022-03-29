@@ -14,14 +14,11 @@ provider:
 
 functions:
   lambda:
-    name: cors-proxy
+    name: arduboy-cors-proxy
     handler: handler.corsProxy
     events:
       - http:
           path: ''
           method: get
           cors: true
-      - http:
-          path: ''
-          method: post
-          cors: true
+
