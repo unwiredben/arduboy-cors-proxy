@@ -30,6 +30,7 @@ module.exports.corsProxy = (event, context, callback) => {
     // only proxy .hex file requests
     if (!params.url.endsWith(".hex") &&
         !params.url.endsWith(".arduboy") &&
+        !params.url.endsWith(".bin") &&
         !params.url.endsWith(".json")) {
         const errorResponse = {
             statusCode: 400,

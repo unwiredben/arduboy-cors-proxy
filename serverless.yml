@@ -1,3 +1,5 @@
+org: unwiredben
+app: cors-proxy
 service: cors-proxy
 
 plugins:
@@ -6,19 +8,15 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
-  timeout: 60
-  stage: dev
+  timeout: 20
+  httpApi:
+    cors: true
   region: eu-central-1
-  environment:
-    foo: 123
 
 functions:
-  lambda:
-    name: arduboy-cors-proxy
+  arduboy-cors-proxy:
     handler: handler.corsProxy
     events:
-      - http:
-          path: ''
+      - httpApi:
+          path: '/get'
           method: get
-          cors: true
-
