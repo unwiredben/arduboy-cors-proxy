@@ -7,16 +7,16 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs12.x
   timeout: 20
   httpApi:
     cors: true
-  region: eu-central-1
+    disableDefaultEndpoint: true
+  region: us-east-1
 
 functions:
   arduboy-cors-proxy:
     handler: handler.corsProxy
     events:
       - httpApi:
-          path: '/get'
+          path: '/arduboyGet'
           method: get

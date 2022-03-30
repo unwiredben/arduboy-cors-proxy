@@ -78,8 +78,6 @@ module.exports.corsProxy = (event, context, callback) => {
 		isBase64Encoded: true
             };
 
-            callback(null, proxyResponse);
-
             resolve(proxyResponse);
         });
     });
