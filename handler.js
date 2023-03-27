@@ -31,6 +31,7 @@ module.exports.corsProxy = (event, context, callback) => {
     if (!params.url.endsWith(".hex") &&
         !params.url.endsWith(".arduboy") &&
         !params.url.endsWith(".bin") &&
+	!params.url.endsWith(".elf") &&
         !params.url.endsWith(".json")) {
         const errorResponse = {
             statusCode: 400,
